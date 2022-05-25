@@ -54,7 +54,7 @@
 					<section id="contact">
 						<div class="inner">
 							<section>
-								<form method="post" onsubmit="sendEmail()">
+								<form method="post" action="mailto:jeddbasden2@gmail.com" name="EmailForm">
 									<div class="fields">
 										<div class="field half">
 											<label for="name">Name</label>
@@ -70,7 +70,7 @@
 										</div>
 									</div>
 									<ul class="actions">
-										<li><input type="submit" class="primary" value="Send Mail"></li>
+										<li><input type="button" value="Send Message" onclick="sendEmail()" ></li>
 										<li><input type="reset" id="clear" value="Clear" /></li>
 									</ul>
 								</form>
@@ -136,7 +136,7 @@
 						SecureToken: "284eb853-eb37-48d6-9503-a9d432fa34d4",
 						To: 'jeddbasden2@gmail.com',
 						From: email,
-						Subject: `${name} from your portfolio!`,
+						Subject: `${name} sends a message from your portfolio site!`,
 						Body: message
 					}).then(
 						message => alert("mail sent successfully")
