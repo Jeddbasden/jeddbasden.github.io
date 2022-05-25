@@ -7,8 +7,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<script src="https://smtpjs.com/v3/smtp.js"></script>
-		
 	</head>
 	<body class="is-preload">
 
@@ -56,7 +54,7 @@
 					<section id="contact">
 						<div class="inner">
 							<section>
-								<form method="post" action="mailto:jeddbasden2@gmail.com" name="EmailForm">
+								<form method="post" onsubmit="sendEmail()">
 									<div class="fields">
 										<div class="field half">
 											<label for="name">Name</label>
@@ -72,7 +70,7 @@
 										</div>
 									</div>
 									<ul class="actions">
-										<li><input type="button" value="Send Mail" onclick="sendEmail()" ></li>
+										<li><input type="submit" class="primary" value="Send Mail"></li>
 										<li><input type="reset" id="clear" value="Clear" /></li>
 									</ul>
 								</form>
@@ -128,6 +126,7 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="https://smtpjs.com/v3/smtp.js"></script>
 			<script type="text/javascript">
 				function sendEmail() {
 					const name = document.getElementById('name').value
@@ -137,12 +136,11 @@
 						SecureToken: "284eb853-eb37-48d6-9503-a9d432fa34d4",
 						To: 'jeddbasden2@gmail.com',
 						From: email,
-						Subject: name,
+						Subject: `${name} from your portfolio!`,
 						Body: message
 					}).then(
 						message => alert("mail sent successfully")
 					);
-					
 					document.getElementById("clear").click();
 				}
 			</script>
