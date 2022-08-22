@@ -1833,6 +1833,21 @@ input, select, textarea {
 			margin-bottom: 0;
 		}
 
+		#name {
+			border-radius: 3px;
+			background-color: rgb(7, 9, 10)
+		}
+
+		#email {
+			border-radius: 3px;
+			background-color: rgb(7, 9, 10)
+		}
+
+		#message {
+			border-radius: 3px;
+			background-color: rgb(7, 9, 10)
+		}
+
 		form > .fields {
 			display: -moz-flex;
 			display: -webkit-flex;
@@ -1881,6 +1896,7 @@ input, select, textarea {
 				form > .fields > .field {
 					padding: 1.5em 0 0 1.5em;
 					width: calc(100% - 1.5em);
+					
 				}
 
 					form > .fields > .field.half {
